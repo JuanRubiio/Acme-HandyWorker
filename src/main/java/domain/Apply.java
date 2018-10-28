@@ -3,7 +3,6 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
@@ -17,12 +16,11 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Apply extends DomainEntity {
 
 	//----------Atributos------------
-	private Date		moment;
-	private String		status;
-	private String		customerComment;
-	private Money		price;
-	private String		handyWorkerComments;
-	private List<Phase>	workPlan;
+	private Date	moment;
+	private String	status;
+	private String	customerComment;
+	private Money	price;
+	private String	handyWorkerComments;
 
 
 	//----------Getters & Setters-----------
@@ -74,19 +72,10 @@ public class Apply extends DomainEntity {
 		this.handyWorkerComments = handyWorkerComments;
 	}
 
-	@Valid
-	public List<Phase> getWorkPlan() {
-		return this.workPlan;
-	}
-
-	public void setWorkPlan(final List<Phase> workPlane) {
-		this.workPlan = workPlane;
-	}
-
 
 	//------RelationsShip-----------
 	private HandyWorker			handyWorker;
-	private Collection<Phase>	phase;
+	private Collection<Phase>	workplan;
 	private FixUpTask			fixUpTask;
 
 
@@ -100,12 +89,12 @@ public class Apply extends DomainEntity {
 	}
 
 	@Valid
-	public Collection<Phase> getPhase() {
-		return this.phase;
+	public Collection<Phase> getWorkPlan() {
+		return this.workplan;
 	}
 
-	public void setPhase(final Collection<Phase> phase) {
-		this.phase = phase;
+	public void setWorkPlan(final Collection<Phase> workplan) {
+		this.workplan = workplan;
 	}
 
 	@Valid

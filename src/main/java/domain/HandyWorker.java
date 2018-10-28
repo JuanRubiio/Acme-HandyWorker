@@ -35,7 +35,6 @@ public class HandyWorker extends Endorser {
 
 
 	@Valid
-	@NotBlank
 	public Collection<Tutorial> getTutorial() {
 		return this.tutorial;
 	}
@@ -45,7 +44,6 @@ public class HandyWorker extends Endorser {
 	}
 
 	@Valid
-	@NotBlank
 	public Curriculum getCurriculum() {
 		return this.curriculum;
 	}
@@ -55,7 +53,6 @@ public class HandyWorker extends Endorser {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<Finder> getFinder() {
 		return this.finder;
 	}
@@ -65,7 +62,6 @@ public class HandyWorker extends Endorser {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<Apply> getApply() {
 		return this.apply;
 	}
