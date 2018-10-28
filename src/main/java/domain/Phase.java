@@ -3,10 +3,13 @@ package domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class Phase extends DomainEntity {
 
 	//--------Atributos-------
@@ -36,6 +39,7 @@ public class Phase extends DomainEntity {
 		this.description = description;
 	}
 
+	@NotNull
 	public Date getStartMoment() {
 		return this.startMoment;
 	}
@@ -44,6 +48,7 @@ public class Phase extends DomainEntity {
 		this.startMoment = startMoment;
 	}
 
+	@NotNull
 	public Date getEndMoment() {
 		return this.endMoment;
 	}
@@ -52,6 +57,7 @@ public class Phase extends DomainEntity {
 		this.endMoment = endMoment;
 	}
 
+	@NotNull
 	public Integer getOrdered() {
 		return this.ordered;
 	}

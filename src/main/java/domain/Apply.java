@@ -1,9 +1,11 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -11,6 +13,7 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class Apply extends DomainEntity {
 
 	//----------Atributos------------
@@ -52,6 +55,7 @@ public class Apply extends DomainEntity {
 		this.customerComment = customerComment;
 	}
 
+	@Valid
 	@NotNull
 	public Money getPrice() {
 		return this.price;
@@ -70,6 +74,7 @@ public class Apply extends DomainEntity {
 		this.handyWorkerComments = handyWorkerComments;
 	}
 
+	@Valid
 	public List<Phase> getWorkPlan() {
 		return this.workPlan;
 	}
@@ -80,13 +85,12 @@ public class Apply extends DomainEntity {
 
 
 	//------RelationsShip-----------
-	private HandyWorker	handyWorker;
-	private Phase		phase;
-	private FixUpTask	fixUpTask;
+	private HandyWorker			handyWorker;
+	private Collection<Phase>	phase;
+	private FixUpTask			fixUpTask;
 
 
 	@Valid
-	@NotBlank
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
@@ -96,17 +100,15 @@ public class Apply extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
-	public Phase getPhase() {
+	public Collection<Phase> getPhase() {
 		return this.phase;
 	}
 
-	public void setPhase(final Phase phase) {
+	public void setPhase(final Collection<Phase> phase) {
 		this.phase = phase;
 	}
 
 	@Valid
-	@NotBlank
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
 	}

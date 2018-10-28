@@ -1,14 +1,17 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class FixUpTask extends DomainEntity {
 
 	//---------Atributos------------
@@ -61,6 +64,7 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@NotNull
+	@Valid
 	public Money getMaxPrice() {
 		return this.maxPrice;
 	}
@@ -90,12 +94,12 @@ public class FixUpTask extends DomainEntity {
 
 	//-------------RelationShip------------------
 
-	private Customer	customer;
-	private Complaint	complaint;
-	private Warranty	warranty;
-	private Category	category;
-	private Finder		finder;
-	private Apply		apply;
+	private Customer				customer;
+	private Collection<Complaint>	complaint;
+	private Warranty				warranty;
+	private Category				category;
+	private Collection<Finder>		finder;
+	private Collection<Apply>		apply;
 
 
 	@Valid
@@ -108,11 +112,11 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@Valid
-	public Complaint getComplaint() {
+	public Collection<Complaint> getComplaint() {
 		return this.complaint;
 	}
 
-	public void setComplaint(final Complaint complaint) {
+	public void setComplaint(final Collection<Complaint> complaint) {
 		this.complaint = complaint;
 	}
 
@@ -135,20 +139,20 @@ public class FixUpTask extends DomainEntity {
 	}
 
 	@Valid
-	public Finder getFinder() {
+	public Collection<Finder> getFinder() {
 		return this.finder;
 	}
 
-	public void setFinder(final Finder finder) {
+	public void setFinder(final Collection<Finder> finder) {
 		this.finder = finder;
 	}
 
 	@Valid
-	public Apply getApply() {
+	public Collection<Apply> getApply() {
 		return this.apply;
 	}
 
-	public void setApply(final Apply apply) {
+	public void setApply(final Collection<Apply> apply) {
 		this.apply = apply;
 	}
 

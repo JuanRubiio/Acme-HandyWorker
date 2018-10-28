@@ -3,10 +3,12 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
 public class HandyWorker extends Endorser {
 
 	//------Atributos---------
@@ -27,7 +29,7 @@ public class HandyWorker extends Endorser {
 	//---------Relationships--------------
 
 	private Collection<Tutorial>	tutorial;
-	private Collection<Curriculum>	curriculum;
+	private Curriculum				curriculum;
 	private Collection<Finder>		finder;
 	private Collection<Apply>		apply;
 
@@ -44,11 +46,11 @@ public class HandyWorker extends Endorser {
 
 	@Valid
 	@NotBlank
-	public Collection<Curriculum> getCurriculum() {
+	public Curriculum getCurriculum() {
 		return this.curriculum;
 	}
 
-	public void setCurriculum(final Collection<Curriculum> curriculum) {
+	public void setCurriculum(final Curriculum curriculum) {
 		this.curriculum = curriculum;
 	}
 
