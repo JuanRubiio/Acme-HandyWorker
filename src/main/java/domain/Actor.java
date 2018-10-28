@@ -113,7 +113,6 @@ public abstract class Actor extends DomainEntity {
 
 
 	@Valid
-	@NotBlank
 	public UserAccount getUserAccount() {
 		return this.userAccount;
 	}
@@ -123,7 +122,6 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<MessageBox> getMessageBoxes() {
 		return this.messageBoxes;
 	}
@@ -133,7 +131,6 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}
@@ -143,7 +140,6 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<SocialProfile> getSocialProfiles() {
 		return this.socialProfiles;
 	}

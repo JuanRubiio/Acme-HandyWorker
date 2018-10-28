@@ -6,8 +6,7 @@ import java.util.Collection;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -17,7 +16,7 @@ public class Spam extends DomainEntity {
 	private Collection<String>	spamWords;
 
 
-	@NotBlank
+	@NotNull
 	public Collection<String> getSpamWords() {
 		return this.spamWords;
 	}

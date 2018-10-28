@@ -7,7 +7,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -45,7 +44,6 @@ public class Category extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
 	public Collection<Category> getChildrenCategories() {
 		return this.childrenCategories;
 	}

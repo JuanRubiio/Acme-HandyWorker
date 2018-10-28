@@ -48,7 +48,6 @@ public class Message extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Actor getSender() {
 		return this.sender;
 	}
@@ -58,7 +57,6 @@ public class Message extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Actor getRecipient() {
 		return this.recipient;
 	}
@@ -75,7 +73,6 @@ public class Message extends DomainEntity {
 		this.spam = spam;
 	}
 
-	@NotNull
 	@NotBlank
 	public String getSubject() {
 		return this.subject;
@@ -85,7 +82,6 @@ public class Message extends DomainEntity {
 		this.subject = subject;
 	}
 
-	@NotNull
 	@NotBlank
 	public String getBody() {
 		return this.body;
@@ -95,7 +91,6 @@ public class Message extends DomainEntity {
 		this.body = body;
 	}
 
-	@NotNull
 	@NotBlank
 	@Pattern(regexp = "HIGH|NEUTRAL|LOW")
 	public String getPriority() {
@@ -115,7 +110,6 @@ public class Message extends DomainEntity {
 
 
 	@Valid
-	@NotBlank
 	public Actor getActor() {
 		return this.actor;
 	}
@@ -125,7 +119,6 @@ public class Message extends DomainEntity {
 	}
 
 	@Valid
-	@NotBlank
 	public Collection<MessageBox> getMessageBoxes() {
 		return this.messageBoxes;
 	}
@@ -135,7 +128,6 @@ public class Message extends DomainEntity {
 	}
 
 	@Valid
-	@NotNull
 	public Collection<Tag> getTags() {
 		return this.tags;
 	}

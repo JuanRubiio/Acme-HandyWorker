@@ -7,7 +7,6 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,7 +18,6 @@ public class Tag extends DomainEntity {
 	private String	name;
 
 
-	@NotNull
 	@NotBlank
 	public String getName() {
 		return this.name;
@@ -36,7 +34,6 @@ public class Tag extends DomainEntity {
 
 
 	@Valid
-	@NotNull
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}

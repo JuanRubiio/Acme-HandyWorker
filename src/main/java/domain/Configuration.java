@@ -27,7 +27,6 @@ public class Configuration extends DomainEntity {
 	private Integer	finderDuration;
 
 
-	@NotBlank
 	@Min(0)
 	public Integer getFinderDuration() {
 		return this.finderDuration;
@@ -65,7 +64,6 @@ public class Configuration extends DomainEntity {
 		this.welcomMessageEs = welcomMessageEs;
 	}
 
-	@NotBlank
 	@Min(1)
 	public Double getVat() {
 		return this.vat;

@@ -52,7 +52,6 @@ public class SocialProfile extends DomainEntity {
 	// Relationships ----------------------------------------------------------
 
 	@Valid
-	@NotBlank
 	public Actor getActor() {
 		return this.actor;
 	}

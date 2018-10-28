@@ -16,7 +16,6 @@ public class Money {
 
 	@Min(0)
 	@Digits(integer = 9, fraction = 2)
-	@NotBlank
 	public Double getAmount() {
 		return this.amount;
 	}
