@@ -1,6 +1,8 @@
 
 package domain;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 import org.joda.time.LocalDate;
 
 public class Tutorial extends DomainEntity {
@@ -11,6 +13,7 @@ public class Tutorial extends DomainEntity {
 	private String		pictures;
 
 
+	@NotBlank
 	public String getTitle() {
 		return this.title;
 	}
@@ -18,7 +21,7 @@ public class Tutorial extends DomainEntity {
 	public void setTitle(final String title) {
 		this.title = title;
 	}
-
+	@NotBlank
 	public LocalDate getMomentUpdate() {
 		return this.momentUpdate;
 	}
@@ -26,7 +29,7 @@ public class Tutorial extends DomainEntity {
 	public void setMomentUpdate(final LocalDate momentUpdate) {
 		this.momentUpdate = momentUpdate;
 	}
-
+	@NotBlank
 	public String getSummary() {
 		return this.summary;
 	}
@@ -34,7 +37,7 @@ public class Tutorial extends DomainEntity {
 	public void setSummary(final String summary) {
 		this.summary = summary;
 	}
-
+	@URL
 	public String getPictures() {
 		return this.pictures;
 	}
