@@ -12,12 +12,12 @@ import org.hibernate.validator.constraints.URL;
 @Entity
 public class Report extends DomainEntity {
 
-	private Date	moment;
-	private String	description;
-	private String	attachements;
-	private Boolean	draft;
+	private Date		moment;
+	private String		description;
+	private String		attachements;
+	private Boolean		draft;
 
-	List<Note>		listNotes;
+	private List<Note>	listNotes;
 
 
 	public Date getMoment() {
@@ -46,7 +46,6 @@ public class Report extends DomainEntity {
 		this.attachements = attachements;
 	}
 
-	@NotBlank
 	public Boolean getDraft() {
 		return this.draft;
 	}
