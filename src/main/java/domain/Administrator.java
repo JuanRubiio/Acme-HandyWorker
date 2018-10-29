@@ -1,6 +1,9 @@
+
 package domain;
 
+import javax.persistence.Entity;
 
-public class Administrator {
+@Entity
+public class Administrator extends Actor {
 
 }
