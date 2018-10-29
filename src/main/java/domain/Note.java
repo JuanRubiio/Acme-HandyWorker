@@ -4,6 +4,7 @@ package domain;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,7 +20,6 @@ public class Note extends DomainEntity {
 	private Report	report;
 
 
-	@NotBlank
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -61,6 +61,7 @@ public class Note extends DomainEntity {
 		this.refereeComments = refereeComments;
 	}
 
+	@Valid
 	public Report getReport() {
 		return this.report;
 	}
