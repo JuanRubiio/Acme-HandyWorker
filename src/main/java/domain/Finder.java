@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 @Entity
 public class Finder extends DomainEntity {
@@ -94,6 +95,7 @@ public class Finder extends DomainEntity {
 		this.warranty = warranty;
 	}
 
+	@Valid
 	public List<Fixup> getListFixup() {
 		return this.listFixup;
 	}
