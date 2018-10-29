@@ -12,7 +12,12 @@ public class Section extends DomainEntity {
 	private String	title;
 	private String	text;
 	private String	pictures;
+	private Integer	order;
 
+
+	public Section() {
+		super();
+	}
 
 	@NotBlank
 	public String getTitle() {
@@ -37,6 +42,14 @@ public class Section extends DomainEntity {
 
 	public void setPictures(final String pictures) {
 		this.pictures = pictures;
+	}
+
+	public Integer getOrder() {
+		return this.order;
+	}
+
+	public void setOrder(final Integer order) {
+		this.order = order;
 	}
 
 }

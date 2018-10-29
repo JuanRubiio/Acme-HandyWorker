@@ -1,20 +1,25 @@
 
 package domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
-import org.joda.time.LocalDate;
 
 @Entity
 public class Complaint extends DomainEntity {
 
-	private String		ticker;
-	private LocalDate	moment;
-	private String		description;
-	private String		attachements;
+	private String	ticker;
+	private Date	moment;
+	private String	description;
+	private String	attachements;
 
+
+	public Complaint() {
+		super();
+	}
 
 	@NotBlank
 	public String getTicker() {
@@ -24,12 +29,12 @@ public class Complaint extends DomainEntity {
 	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
-	@NotBlank
-	public LocalDate getMoment() {
+
+	public Date getMoment() {
 		return this.moment;
 	}
 
-	public void setMoment(final LocalDate moment) {
+	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
 	@NotBlank

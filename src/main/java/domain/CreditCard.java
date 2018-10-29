@@ -2,9 +2,11 @@
 package domain;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
-import org.joda.time.LocalDate;
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 public class CreditCard extends DomainEntity {
@@ -16,6 +18,10 @@ public class CreditCard extends DomainEntity {
 	private Integer	expiryYear;
 	private Integer	cvv;
 
+
+	public CreditCard() {
+		super();
+	}
 
 	@NotBlank
 	public String getHolderName() {
@@ -34,6 +40,7 @@ public class CreditCard extends DomainEntity {
 		this.brandName = brandName;
 	}
 	@NotBlank
+	@CreditCardNumber
 	public String getNumber() {
 		return this.number;
 	}
@@ -41,53 +48,29 @@ public class CreditCard extends DomainEntity {
 	public void setNumber(final String number) {
 		this.number = number;
 	}
-
+	@Range(min = 1, max = 12)
 	public Integer getExpiryMonth() {
-		Integer res;
-		if (this.expiryMonth >= 1 && this.expiryMonth <= 12)
-			res = this.expiryMonth;
-		else
-			throw new IllegalArgumentException("El mes de expiración no es válido.");
-		return res;
+		return this.expiryMonth;
 	}
 
 	public void setExpiryMonth(final Integer expiryMonth) {
-		if (expiryMonth >= 1 && expiryMonth <= 12)
-			this.expiryMonth = expiryMonth;
-		else
-			throw new IllegalArgumentException("El mes de expiración no es válido.");
+		this.expiryMonth = expiryMonth;
 	}
-
+	@Min(2018)
 	public Integer getExpiryYear() {
-		Integer res;
-		if (this.expiryYear >= LocalDate.now().getYear())
-			res = this.expiryYear;
-		else
-			throw new IllegalArgumentException("El año de expiración no es válido.");
-		return res;
+		return this.expiryYear;
 	}
 
 	public void setExpiryYear(final Integer expiryYear) {
-		if (this.expiryYear >= LocalDate.now().getYear())
-			this.expiryYear = expiryYear;
-		else
-			throw new IllegalArgumentException("El año de expiración no es válido.");
+		this.expiryYear = expiryYear;
 	}
-
+	@Range(min = 100, max = 999)
 	public Integer getCvv() {
-		Integer res;
-		if (this.cvv <= 999 && this.cvv >= 100)
-			res = this.cvv;
-		else
-			throw new IllegalArgumentException("El código de seguridad no es válido");
-		return res;
+		return this.cvv;
 	}
 
 	public void setCvv(final Integer cvv) {
-		if (cvv >= 100 && cvv <= 999)
-			this.cvv = cvv;
-		else
-			throw new IllegalArgumentException("El codigo de seguridad no es válido");
+		this.cvv = cvv;
 	}
 
 }
