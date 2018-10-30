@@ -1,15 +1,13 @@
 
 package domain;
 
-import javax.persistence.Entity;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 
-@Entity
-public class CreditCard extends DomainEntity {
+public class CreditCard {
 
 	private String	holderName;
 	private String	brandName;
@@ -18,10 +16,6 @@ public class CreditCard extends DomainEntity {
 	private Integer	expiryYear;
 	private Integer	cvv;
 
-
-	public CreditCard() {
-		super();
-	}
 
 	@NotBlank
 	public String getHolderName() {

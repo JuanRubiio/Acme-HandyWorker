@@ -1,9 +1,23 @@
 
 package domain;
 
-import javax.persistence.Entity;
+import java.util.Collection;
 
-@Entity
-public class Customer {
+import javax.validation.Valid;
+
+public class Customer extends Endorser {
+
+	//external attributes
+	private Collection<FixUpTask>	fixUpTasks;
+
+
+	@Valid
+	public Collection<FixUpTask> getFixUpTasks() {
+		return this.fixUpTasks;
+	}
+
+	public void setFixUpTasks(final Collection<FixUpTask> fixUpTasks) {
+		this.fixUpTasks = fixUpTasks;
+	}
 
 }

@@ -1,23 +1,28 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 public class Tutorial extends DomainEntity {
 
-	private String	title;
-	private Date	momentUpdate;
-	private String	summary;
-	private String	pictures;
-	private Date	momentCreate;
+	private String				title;
+	private Date				momentUpdate;
+	private String				summary;
+	private String				pictures;
+	private Date				momentCreate;
 
+	//external attributes
+	private Collection<Section>	section;
+	private Sponsorship			sponsorship;
+	private HandyWorker			handyWorker;
 
-	public Tutorial() {
-		super();
-	}
 
 	@NotBlank
 	public String getTitle() {
@@ -58,6 +63,35 @@ public class Tutorial extends DomainEntity {
 
 	public void setMomentCreate(final Date momentCreate) {
 		this.momentCreate = momentCreate;
+	}
+
+	@Valid
+	@NotNull
+	public Collection<Section> getSection() {
+		return this.section;
+	}
+
+	public void setSection(final Collection<Section> section) {
+		this.section = section;
+	}
+
+	@Valid
+	public Sponsorship getSponsorship() {
+		return this.sponsorship;
+	}
+
+	public void setSponsorship(final Sponsorship sponsorship) {
+		this.sponsorship = sponsorship;
+	}
+
+	@Valid
+	@NotNull
+	public HandyWorker getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
 	}
 
 }

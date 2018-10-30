@@ -3,23 +3,23 @@ package domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-@Entity
 public class Complaint extends DomainEntity {
 
-	private String	ticker;
-	private Date	moment;
-	private String	description;
-	private String	attachements;
+	private String		ticker;
+	private Date		moment;
+	private String		description;
+	private String		attachements;
+	//external attributes
+	private Referee		referee;
+	private Report		report;
+	private FixUpTask	fixUpTask;
 
-
-	public Complaint() {
-		super();
-	}
 
 	@NotBlank
 	public String getTicker() {
@@ -52,6 +52,36 @@ public class Complaint extends DomainEntity {
 
 	public void setAttachements(final String attachements) {
 		this.attachements = attachements;
+	}
+
+	@Valid
+	@NotNull
+	public Referee getReferee() {
+		return this.referee;
+	}
+
+	public void setReferee(final Referee referee) {
+		this.referee = referee;
+	}
+
+	@Valid
+	@NotNull
+	public Report getReport() {
+		return this.report;
+	}
+
+	public void setReport(final Report report) {
+		this.report = report;
+	}
+
+	@Valid
+	@NotNull
+	public FixUpTask getFixUpTask() {
+		return this.fixUpTask;
+	}
+
+	public void setFixUpTask(final FixUpTask fixUpTask) {
+		this.fixUpTask = fixUpTask;
 	}
 
 }
