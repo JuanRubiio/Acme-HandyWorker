@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class Finder extends DomainEntity {
 
@@ -21,6 +22,8 @@ public class Finder extends DomainEntity {
 	private HandyWorker			handyWorker;
 
 
+	@Valid
+	@NotNull
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
