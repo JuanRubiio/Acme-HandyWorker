@@ -18,7 +18,16 @@ public class Finder extends DomainEntity {
 	private String				category;
 
 	private Collection<Fixup>	collectionFixup;
+	private HandyWorker			handyWorker;
 
+
+	public HandyWorker getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
+	}
 
 	public String getKey() {
 		return this.key;
