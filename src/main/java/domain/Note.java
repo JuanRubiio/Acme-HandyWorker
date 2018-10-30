@@ -4,13 +4,11 @@ package domain;
 import java.util.Date;
 
 import javax.validation.Valid;
-
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class Note extends DomainEntity {
 
 	private Date	moment;
-	private String	comment;
 	private String	handyworkerComments;
 	private String	customerComments;
 	private String	refereeComments;
@@ -18,21 +16,13 @@ public class Note extends DomainEntity {
 	private Report	report;
 
 
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
 
 	public void setMoment(final Date moment) {
 		this.moment = moment;
-	}
-
-	@NotBlank
-	public String getComment() {
-		return this.comment;
-	}
-
-	public void setComment(final String comment) {
-		this.comment = comment;
 	}
 
 	public String getHandyworkerComments() {
@@ -60,6 +50,7 @@ public class Note extends DomainEntity {
 	}
 
 	@Valid
+	@NotNull
 	public Report getReport() {
 		return this.report;
 	}
