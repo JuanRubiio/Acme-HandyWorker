@@ -9,18 +9,28 @@ import javax.validation.constraints.NotNull;
 
 public class Finder extends DomainEntity {
 
-	private String				key;
-	private Double				minPrice;
-	private Double				maxPrice;
-	private Date				minDate;
-	private Date				maxDate;
-	private Date				lastUpdate;
-	private String				warranty;
-	private String				category;
+	private String					key;
+	private Double					minPrice;
+	private Double					maxPrice;
+	private Date					minDate;
+	private Date					maxDate;
+	private Date					lastUpdate;
+	private String					warranty;
+	private String					category;
 
-	private Collection<Fixup>	collectionFixup;
-	private HandyWorker			handyWorker;
+	private HandyWorker				handyWorker;
+	private Collection<FixUpTask>	fixUpTasks;
 
+
+	@Valid
+	@NotNull
+	public Collection<FixUpTask> getFixUpTasks() {
+		return this.fixUpTasks;
+	}
+
+	public void setFixUpTasks(final Collection<FixUpTask> fixUpTasks) {
+		this.fixUpTasks = fixUpTasks;
+	}
 
 	@Valid
 	@NotNull
@@ -94,15 +104,6 @@ public class Finder extends DomainEntity {
 
 	public void setWarranty(final String warranty) {
 		this.warranty = warranty;
-	}
-
-	@Valid
-	public Collection<Fixup> getCollectionFixup() {
-		return this.collectionFixup;
-	}
-
-	public void setCollectionFixup(final Collection<Fixup> listFixup) {
-		this.collectionFixup = this.collectionFixup;
 	}
 
 }
