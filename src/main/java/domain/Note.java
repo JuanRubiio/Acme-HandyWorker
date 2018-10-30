@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Note extends DomainEntity {
 
 	private Date	moment;
-	private String	mandatory;
+	private String	comment;
 	private String	handyworkerComments;
 	private String	customerComments;
 	private String	refereeComments;
@@ -29,12 +29,12 @@ public class Note extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getMandatory() {
-		return this.mandatory;
+	public String getComment() {
+		return this.comment;
 	}
 
-	public void setMandatory(final String mandatory) {
-		this.mandatory = mandatory;
+	public void setComment(final String comment) {
+		this.comment = comment;
 	}
 
 	public String getHandyworkerComments() {
