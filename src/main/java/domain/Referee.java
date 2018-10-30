@@ -1,31 +1,31 @@
 
 package domain;
 
-import java.util.List;
+import java.util.Collection;
 
 import javax.validation.Valid;
 
 public class Referee extends Actor {
 
-	private List<Report>	listReports;
-	private List<Referee>	listReferees;
+	private Collection<Report>	collectionReports;
+	private Collection<Referee>	collectionReferees;
 
 
 	@Valid
-	public List<Referee> getListReferees() {
-		return this.listReferees;
+	public Collection<Referee> getCollectionReferees() {
+		return this.collectionReferees;
 	}
 
-	public void setListReferees(final List<Referee> listReferees) {
-		this.listReferees = listReferees;
+	public void setCollectionReferees(final Collection<Referee> collectionReferees) {
+		this.collectionReferees = collectionReferees;
 	}
 
-	public List<Report> getListReports() {
-		return this.listReports;
+	public Collection<Report> getListReports() {
+		return this.collectionReports;
 	}
 
-	public void setListReports(final List<Report> listReports) {
-		this.listReports = listReports;
+	public void setCollectionReports(final Collection<Report> collectionReports) {
+		this.collectionReports = collectionReports;
 	}
 
 }
