@@ -69,6 +69,7 @@ public class Phase extends DomainEntity {
 	private Apply	apply;
 
 
+	@NotNull
 	@Valid
 	public Apply getApply() {
 		return this.apply;

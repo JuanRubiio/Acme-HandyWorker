@@ -2,6 +2,7 @@
 package domain;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -30,6 +31,7 @@ public class Status extends DomainEntity {
 	private Apply	apply;
 
 
+	@NotNull
 	@Valid
 	public Apply getApply() {
 		return this.apply;

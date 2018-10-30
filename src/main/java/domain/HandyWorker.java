@@ -4,6 +4,7 @@ package domain;
 import java.util.Collection;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -41,6 +42,7 @@ public class HandyWorker extends Endorser {
 		this.tutorial = tutorial;
 	}
 
+	@NotNull
 	@Valid
 	public Curriculum getCurriculum() {
 		return this.curriculum;

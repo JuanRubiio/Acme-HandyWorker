@@ -100,6 +100,7 @@ public class FixUpTask extends DomainEntity {
 	private Collection<Apply>		apply;
 
 
+	@NotNull
 	@Valid
 	public Customer getCustomer() {
 		return this.customer;
@@ -118,6 +119,7 @@ public class FixUpTask extends DomainEntity {
 		this.complaint = complaint;
 	}
 
+	@NotNull
 	@Valid
 	public Warranty getWarranty() {
 		return this.warranty;
@@ -127,6 +129,7 @@ public class FixUpTask extends DomainEntity {
 		this.warranty = warranty;
 	}
 
+	@NotNull
 	@Valid
 	public Category getCategory() {
 		return this.category;

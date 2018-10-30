@@ -66,6 +66,7 @@ public class Apply extends DomainEntity {
 	private Collection<Status>	status;
 
 
+	@NotNull
 	@Valid
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
@@ -84,6 +85,7 @@ public class Apply extends DomainEntity {
 		this.workplan = workplan;
 	}
 
+	@NotNull
 	@Valid
 	public FixUpTask getFixUpTask() {
 		return this.fixUpTask;
