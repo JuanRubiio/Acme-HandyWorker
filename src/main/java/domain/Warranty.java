@@ -1,11 +1,9 @@
 
 package domain;
 
-import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotBlank;
 
-public class Warranty {
+public class Warranty extends DomainEntity {
 
 	private String	title;
 	private String	terms;
@@ -13,7 +11,6 @@ public class Warranty {
 
 
 	@NotBlank
-	@NotNull
 	String getTitle() {
 		return this.title;
 	}
@@ -23,7 +20,6 @@ public class Warranty {
 	}
 
 	@NotBlank
-	@NotNull
 	String getTerms() {
 		return this.terms;
 	}
@@ -33,7 +29,6 @@ public class Warranty {
 	}
 
 	@NotBlank
-	@NotNull
 	String getLaws() {
 		return this.laws;
 	}

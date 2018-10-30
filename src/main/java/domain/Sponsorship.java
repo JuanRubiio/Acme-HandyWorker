@@ -2,23 +2,19 @@
 package domain;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-public class Sponsorship {
+public class Sponsorship extends DomainEntity {
 
 	private String		banner;
 	private String		link;
 	private CreditCard	creditCard;
-	private Tutorial	tutorial;
-	private Sponsor		sponsor;
 
 
 	@NotBlank
 	@URL
-	@NotNull
 	String getBanner() {
 		return this.banner;
 	}
@@ -29,7 +25,6 @@ public class Sponsorship {
 
 	@NotBlank
 	@URL
-	@NotNull
 	String getLink() {
 		return this.link;
 	}
@@ -39,7 +34,6 @@ public class Sponsorship {
 	}
 
 	@Valid
-	@NotNull
 	CreditCard getCreditCard() {
 		return this.creditCard;
 	}
@@ -48,13 +42,28 @@ public class Sponsorship {
 		this.creditCard = creditCard;
 	}
 
-	@NotNull
+
+	//Relationships
+
+	private Tutorial	tutorial;
+	private Sponsor		sponsor;
+
+
+	@Valid
 	Tutorial getTutorial() {
 		return this.tutorial;
 	}
 
-	@NotNull
+	void setTutorial(final Tutorial tutorial) {
+		this.tutorial = tutorial;
+	}
+
+	@Valid
 	Sponsor getSponsor() {
 		return this.sponsor;
+	}
+
+	void setSponsor(final Sponsor sponsor) {
+		this.sponsor = sponsor;
 	}
 }
