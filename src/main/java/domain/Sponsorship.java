@@ -3,7 +3,6 @@ package domain;
 
 import javax.validation.Valid;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 public class Sponsorship extends DomainEntity {
@@ -13,7 +12,6 @@ public class Sponsorship extends DomainEntity {
 	private CreditCard	creditCard;
 
 
-	@NotBlank
 	@URL
 	String getBanner() {
 		return this.banner;
@@ -23,7 +21,6 @@ public class Sponsorship extends DomainEntity {
 		this.banner = banner;
 	}
 
-	@NotBlank
 	@URL
 	String getLink() {
 		return this.link;
