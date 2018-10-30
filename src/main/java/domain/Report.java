@@ -1,20 +1,20 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
 public class Report extends DomainEntity {
 
-	private Date		moment;
-	private String		description;
-	private String		attachements;
-	private Boolean		draft;
+	private Date				moment;
+	private String				description;
+	private String				attachements;
+	private Boolean				draft;
 
-	private List<Note>	listNotes;
+	private Collection<Note>	listNotes;
 
 
 	public Date getMoment() {
@@ -51,11 +51,11 @@ public class Report extends DomainEntity {
 		this.draft = draft;
 	}
 
-	public List<Note> getListNotes() {
+	public Collection<Note> getCollectionNotes() {
 		return this.listNotes;
 	}
 
-	public void setListNotes(final List<Note> listNotes) {
+	public void setCollectionNotes(final Collection<Note> listNotes) {
 		this.listNotes = listNotes;
 	}
 }
