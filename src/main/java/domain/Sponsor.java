@@ -9,11 +9,11 @@ public class Sponsor extends Actor {
 
 
 	@Valid
-	Sponsorship getSponsorShip() {
+	public Sponsorship getSponsorShip() {
 		return this.sponsorShip;
 	}
 
-	void setSponsorShip(final Sponsorship sponsorShip) {
+	public void setSponsorShip(final Sponsorship sponsorShip) {
 		this.sponsorShip = sponsorShip;
 	}
 

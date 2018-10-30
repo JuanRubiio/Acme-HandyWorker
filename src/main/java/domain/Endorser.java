@@ -9,11 +9,11 @@ public class Endorser extends Actor {
 
 
 	@Valid
-	Endorsement getEndorsement() {
+	public Endorsement getEndorsement() {
 		return this.endorsement;
 	}
 
-	void setEndorsement(final Endorsement endorsement) {
+	public void setEndorsement(final Endorsement endorsement) {
 		this.endorsement = endorsement;
 	}
 

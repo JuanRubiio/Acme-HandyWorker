@@ -2,6 +2,7 @@
 package domain;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -13,29 +14,30 @@ public class Sponsorship extends DomainEntity {
 
 
 	@URL
-	String getBanner() {
+	public String getBanner() {
 		return this.banner;
 	}
 
-	void setBanner(final String banner) {
+	public void setBanner(final String banner) {
 		this.banner = banner;
 	}
 
 	@URL
-	String getLink() {
+	public String getLink() {
 		return this.link;
 	}
 
-	void setLink(final String link) {
+	public void setLink(final String link) {
 		this.link = link;
 	}
 
 	@Valid
-	CreditCard getCreditCard() {
+	@NotNull
+	public CreditCard getCreditCard() {
 		return this.creditCard;
 	}
 
-	void setCreditCard(final CreditCard creditCard) {
+	public void setCreditCard(final CreditCard creditCard) {
 		this.creditCard = creditCard;
 	}
 
@@ -47,20 +49,22 @@ public class Sponsorship extends DomainEntity {
 
 
 	@Valid
-	Tutorial getTutorial() {
+	@NotNull
+	public Tutorial getTutorial() {
 		return this.tutorial;
 	}
 
-	void setTutorial(final Tutorial tutorial) {
+	public void setTutorial(final Tutorial tutorial) {
 		this.tutorial = tutorial;
 	}
 
 	@Valid
-	Sponsor getSponsor() {
+	@NotNull
+	public Sponsor getSponsor() {
 		return this.sponsor;
 	}
 
-	void setSponsor(final Sponsor sponsor) {
+	public void setSponsor(final Sponsor sponsor) {
 		this.sponsor = sponsor;
 	}
 }
