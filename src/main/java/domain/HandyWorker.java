@@ -3,12 +3,10 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
 public class HandyWorker extends Endorser {
 
 	//------Atributos---------

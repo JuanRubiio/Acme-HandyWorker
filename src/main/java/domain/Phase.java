@@ -3,13 +3,11 @@ package domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
 public class Phase extends DomainEntity {
 
 	//--------Atributos-------
