@@ -4,10 +4,8 @@ package domain;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 
-@Entity
 public class Finder extends DomainEntity {
 
 	private String		key;
