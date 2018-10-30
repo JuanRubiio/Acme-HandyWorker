@@ -15,10 +15,9 @@ public class Finder extends DomainEntity {
 	private Double		maxPrice;
 	private Date		minDate;
 	private Date		maxDate;
-	private String		description;
-	private String		address;
 	private Date		lastUpdate;
 	private String		warranty;
+	private String		category;
 
 	private List<Fixup>	listFixup;
 
@@ -63,20 +62,12 @@ public class Finder extends DomainEntity {
 		this.maxDate = maxDate;
 	}
 
-	public String getDescription() {
-		return this.description;
+	public String getCategory() {
+		return this.category;
 	}
 
-	public void setDescription(final String description) {
-		this.description = description;
-	}
-
-	public String getAddress() {
-		return this.address;
-	}
-
-	public void setAddress(final String address) {
-		this.address = address;
+	public void setCategory(final String category) {
+		this.category = category;
 	}
 
 	public Date getLastUpdate() {
