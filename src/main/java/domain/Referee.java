@@ -3,10 +3,8 @@ package domain;
 
 import java.util.List;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 
-@Entity
 public class Referee extends Actor {
 
 	private List<Report>	listReports;
