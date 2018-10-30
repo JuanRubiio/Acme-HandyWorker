@@ -1,23 +1,23 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import javax.validation.Valid;
 
 public class Finder extends DomainEntity {
 
-	private String		key;
-	private Double		minPrice;
-	private Double		maxPrice;
-	private Date		minDate;
-	private Date		maxDate;
-	private Date		lastUpdate;
-	private String		warranty;
-	private String		category;
+	private String				key;
+	private Double				minPrice;
+	private Double				maxPrice;
+	private Date				minDate;
+	private Date				maxDate;
+	private Date				lastUpdate;
+	private String				warranty;
+	private String				category;
 
-	private List<Fixup>	listFixup;
+	private Collection<Fixup>	collectionFixup;
 
 
 	public String getKey() {
@@ -85,12 +85,12 @@ public class Finder extends DomainEntity {
 	}
 
 	@Valid
-	public List<Fixup> getListFixup() {
-		return this.listFixup;
+	public Collection<Fixup> getCollectionFixup() {
+		return this.collectionFixup;
 	}
 
-	public void setListFixup(final List<Fixup> listFixup) {
-		this.listFixup = listFixup;
+	public void setCollectionFixup(final Collection<Fixup> listFixup) {
+		this.collectionFixup = this.collectionFixup;
 	}
 
 }
