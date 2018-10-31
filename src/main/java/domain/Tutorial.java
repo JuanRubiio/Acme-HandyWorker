@@ -8,14 +8,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 
 public class Tutorial extends DomainEntity {
 
 	private String				title;
 	private Date				momentUpdate;
 	private String				summary;
-	private String				pictures;
+	private Collection<String>	pictures;
 	private Date				momentCreate;
 
 	//external attributes
@@ -48,15 +47,15 @@ public class Tutorial extends DomainEntity {
 	public void setSummary(final String summary) {
 		this.summary = summary;
 	}
-	@URL
-	public String getPictures() {
+	@NotNull
+	public Collection<String> getPictures() {
 		return this.pictures;
 	}
 
-	public void setPictures(final String pictures) {
+	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
-
+	@NotNull
 	public Date getMomentCreate() {
 		return this.momentCreate;
 	}

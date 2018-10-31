@@ -29,7 +29,7 @@ public class Complaint extends DomainEntity {
 	public void setTicker(final String ticker) {
 		this.ticker = ticker;
 	}
-
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}

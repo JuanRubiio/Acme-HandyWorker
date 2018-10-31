@@ -1,21 +1,22 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 
 public class Section extends DomainEntity {
 
-	private String		title;
-	private String		text;
-	private String		pictures;
-	private Integer		order;
+	private String				title;
+	private String				text;
+	private Collection<String>	pictures;
+	private Integer				order;
 
 	//external attributes
-	private Tutorial	tutorial;
+	private Tutorial			tutorial;
 
 
 	@NotBlank
@@ -34,15 +35,15 @@ public class Section extends DomainEntity {
 	public void setText(final String text) {
 		this.text = text;
 	}
-	@URL
-	public String getPictures() {
+	@NotNull
+	public Collection<String> getPictures() {
 		return this.pictures;
 	}
 
-	public void setPictures(final String pictures) {
+	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
-
+	@NotNull
 	public Integer getOrder() {
 		return this.order;
 	}

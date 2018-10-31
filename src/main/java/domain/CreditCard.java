@@ -33,7 +33,6 @@ public class CreditCard {
 	public void setBrandName(final String brandName) {
 		this.brandName = brandName;
 	}
-	@NotBlank
 	@CreditCardNumber
 	public String getNumber() {
 		return this.number;
