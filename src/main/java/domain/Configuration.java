@@ -27,6 +27,15 @@ public class Configuration extends DomainEntity {
 
 	private Collection<String>	cards;
 
+	private Integer				maxFiders;
+
+	private Integer				absolutMaxFinders;
+
+	private Collection<String>	positiveSpanishWords;
+	private Collection<String>	negativeSpanishWords;
+	private Collection<String>	positiveEnglishWords;
+	private Collection<String>	negativeEnglishWords;
+
 
 	@NotNull
 	@Range(min = 60, max = 1440)
@@ -92,6 +101,62 @@ public class Configuration extends DomainEntity {
 
 	public void setCards(final Collection<String> cards) {
 		this.cards = cards;
+	}
+
+	@NotNull
+	@Range(min = 0, max = 10)
+	public Integer getMaxFiders() {
+		return this.maxFiders;
+	}
+
+	public void setMaxFiders(final Integer maxFiders) {
+		this.maxFiders = maxFiders;
+	}
+
+	@NotNull
+	@Range(min = 0, max = 100)
+	public Integer getAbsolutMaxFinders() {
+		return this.absolutMaxFinders;
+	}
+
+	public void setAbsolutMaxFinders(final Integer absolutMaxFinders) {
+		this.absolutMaxFinders = absolutMaxFinders;
+	}
+
+	@NotNull
+	public Collection<String> getPositiveSpanishWords() {
+		return this.positiveSpanishWords;
+	}
+
+	public void setPositiveSpanishWords(final Collection<String> positiveSpanishWords) {
+		this.positiveSpanishWords = positiveSpanishWords;
+	}
+
+	@NotNull
+	public Collection<String> getNegativeSpanishWords() {
+		return this.negativeSpanishWords;
+	}
+
+	public void setNegativeSpanishWords(final Collection<String> negativeSpanishWords) {
+		this.negativeSpanishWords = negativeSpanishWords;
+	}
+
+	@NotNull
+	public Collection<String> getPositiveEnglishWords() {
+		return this.positiveEnglishWords;
+	}
+
+	public void setPositiveEnglishWords(final Collection<String> positiveEnglishWords) {
+		this.positiveEnglishWords = positiveEnglishWords;
+	}
+
+	@NotNull
+	public Collection<String> getNegativeEnglishWords() {
+		return this.negativeEnglishWords;
+	}
+
+	public void setNegativeEnglishWords(final Collection<String> negativeEnglishWords) {
+		this.negativeEnglishWords = negativeEnglishWords;
 	}
 
 }
