@@ -20,6 +20,7 @@ public class Referee extends Actor {
 		this.collectionReferees = collectionReferees;
 	}
 
+	@Valid
 	public Collection<Report> getListReports() {
 		return this.collectionReports;
 	}
