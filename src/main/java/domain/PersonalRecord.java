@@ -11,7 +11,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 import javax.persistence.ManyToOne;
 
-@Access(AccessType.PROPERTY)
 public class PersonalRecord extends DomainEntity {
 
 	// Atributos ----
@@ -36,7 +35,6 @@ public class PersonalRecord extends DomainEntity {
 	}
 
 	@URL
-	@NotBlank
 	public String getPhoto() {
 		return photo;
 	}
@@ -46,7 +44,6 @@ public class PersonalRecord extends DomainEntity {
 	}
 
 	@Email
-	@NotBlank
 	public String getEmail() {
 		return email;
 	}
@@ -65,7 +62,6 @@ public class PersonalRecord extends DomainEntity {
 	}
 
 	@URL
-	@NotBlank
 	public String getLinkedinIdProfile() {
 		return linkedinIdProfile;
 	}
@@ -79,7 +75,7 @@ public class PersonalRecord extends DomainEntity {
 	private Curriculum curriculum;
 
 	@Valid
-	@ManyToOne(optional=false)
+	@NotNull
 	public Curriculum getCurriculum(){
 		return curriculum;
 	}

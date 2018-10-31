@@ -10,7 +10,6 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Access(AccessType.PROPERTY)
 public class EducationalRecord extends DomainEntity {
 
 	// Atributos ---- 
@@ -37,8 +36,6 @@ public class EducationalRecord extends DomainEntity {
 	}
 
 	@NotNull
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-	@Temporal(TemporalType.TIMESTAMP)
 	public Date getBegin() {
 		return begin;
 	}
@@ -48,8 +45,6 @@ public class EducationalRecord extends DomainEntity {
 	}
 
 	@NotNull
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-	@Temporal(TemporalType.TIMESTAMP)
 	public Date getEnd() {
 		return end;
 	}
@@ -89,7 +84,7 @@ public class EducationalRecord extends DomainEntity {
 	private Curriculum curriculum;
 	
 	@Valid
-	@ManyToOne(optional=false)
+	@NotNull
 	public Curriculum getCurriculum(){
 		return curriculum;
 	}

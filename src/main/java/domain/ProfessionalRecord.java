@@ -15,7 +15,6 @@ import org.hibernate.validator.constraints.URL;
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.ManyToOne;
 
-@Access(AccessType.PROPERTY)
 public class ProfessionalRecord extends DomainEntity {
 
 	// Atributos ----
@@ -36,31 +35,24 @@ public class ProfessionalRecord extends DomainEntity {
 		return companyName;
 	}
 
-	@NotBlank
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	
+	@NotNull
 	public Date getBegin() {
 		return begin;
 	}
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public void setBegin(final Date begin) {
 		this.begin = begin;
 	}
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	
+	@NotNull
 	public Date getEnd() {
 		return end;
 	}
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	public void setEnd(final Date end) {
 		this.end = end;
 	}
@@ -70,7 +62,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return role;
 	}
 
-	@NotBlank
 	public void setRole(final String role) {
 		this.role = role;
 	}
@@ -80,7 +71,6 @@ public class ProfessionalRecord extends DomainEntity {
 		return attachment;
 	}
 
-	@URL
 	public void setAttachment(final String attachment) {
 		this.attachment = attachment;
 	}
@@ -98,7 +88,7 @@ public class ProfessionalRecord extends DomainEntity {
 	private Curriculum curriculum;
 
 	@Valid
-	@ManyToOne(optional=false)
+	@NotNull
 	public Curriculum getCurriculum(){
 		return curriculum;
 	}

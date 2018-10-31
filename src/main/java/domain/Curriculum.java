@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@Access(AccessType.PROPERTY)
 public class Curriculum extends DomainEntity {
 
 	// Atributos ---- 
@@ -29,14 +28,14 @@ public class Curriculum extends DomainEntity {
 	// Relationships ----
 	
 	private PersonalRecord personalRecord;
-	private Collection<EducationalRecord> educationalRecord = new ArrayList<EducationalRecord>();
-	private Collection<ProfessionalRecord> professionalRecords = new ArrayList<ProfessionalRecord>();
-	private Collection<EndorserRecord> endoserRecords = new ArrayList<EndorserRecord>();
-	private Collection<MiscellaneousRecord> miscellaneousRecords = new ArrayList<MiscellaneousRecord>();
+	private Collection<EducationalRecord> educationalRecord ;
+	private Collection<ProfessionalRecord> professionalRecords ;
+	private Collection<EndorserRecord> endoserRecords;
+	private Collection<MiscellaneousRecord> miscellaneousRecords;
 	private HandyWorker handyWorker;
 
 	@Valid
-	@OneToOne(optional=true, mappedBy="curriculum")
+	@NotNull
 	public PersonalRecord getPersonalRecord(){
 		return personalRecord;
 	}
@@ -47,7 +46,6 @@ public class Curriculum extends DomainEntity {
 	
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="curriculum")
 	public Collection<EducationalRecord> getEducationalRecord(){
 		return educationalRecord;
 	}
@@ -58,7 +56,6 @@ public class Curriculum extends DomainEntity {
 
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="curriculum")
 	public Collection<ProfessionalRecord> getProfessionalRecord(){
 		return professionalRecords;
 	}
@@ -69,7 +66,6 @@ public class Curriculum extends DomainEntity {
 	
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="curriculum")
 	public Collection<EndorserRecord> getEndoserRecords(){
 		return endoserRecords;
 	}
@@ -81,7 +77,6 @@ public class Curriculum extends DomainEntity {
 	
 	@Valid
 	@NotNull
-	@OneToMany(mappedBy="curriculum")
 	public Collection<MiscellaneousRecord> getMiscellaneousRecords(){
 		return miscellaneousRecords;
 	}
@@ -91,12 +86,12 @@ public class Curriculum extends DomainEntity {
 	}
 
 	@Valid
-	@OneToOne()
+	@NotNull
 	public HandyWorker getRanger(){
 		return handyWorker;
 	}
 	
-	public void setRanger(final HandyWorker handyWorker){
+	public void setHandyWorker(final HandyWorker handyWorker){
 		this.handyWorker = handyWorker;
 	}
 		

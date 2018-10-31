@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Access(AccessType.PROPERTY)
 public class EndorserRecord extends DomainEntity {
 
 	// Atributos ---- 
@@ -35,7 +34,6 @@ public class EndorserRecord extends DomainEntity {
 		this.name = name;
 	}
 
-	@NotBlank
 	@Email
 	public String getEmail() {
 		return email;
@@ -55,7 +53,6 @@ public class EndorserRecord extends DomainEntity {
 	}
 	
 	@URL
-	@NotBlank
 	public String getAttachment(){
 		return attachment;
 	}
@@ -76,7 +73,7 @@ public class EndorserRecord extends DomainEntity {
 	private Curriculum curriculum;
 
 	@Valid
-	@ManyToOne(optional=false)
+	@NotNull
 	public Curriculum getCurriculum(){
 		return curriculum;
 	}

@@ -1,6 +1,7 @@
 package domain;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
@@ -9,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Access(AccessType.PROPERTY)
 public class MiscellaneousRecord extends DomainEntity {
 
 	// Atributos ---- 
@@ -27,7 +27,8 @@ public class MiscellaneousRecord extends DomainEntity {
 	public void setTitle(final String title) {
 		this.title = title;
 	}
-
+	
+	@URL
 	public String getAttachment() {
 		return attachment;
 	}
@@ -49,7 +50,7 @@ public class MiscellaneousRecord extends DomainEntity {
 	private Curriculum curriculum;
 
 	@Valid
-	@ManyToOne(optional=false)
+	@NotNull
 	public Curriculum getCurriculum(){
 		return curriculum;
 	}
