@@ -11,6 +11,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Apply extends DomainEntity {
@@ -89,6 +90,7 @@ public class Apply extends DomainEntity {
 		this.handyWorker = handyWorker;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Phase> getWorkPlan() {
 		return this.workplan;
