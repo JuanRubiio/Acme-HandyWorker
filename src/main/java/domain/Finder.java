@@ -23,7 +23,6 @@ public class Finder extends DomainEntity {
 
 
 	@Valid
-	@NotNull
 	public Collection<FixUpTask> getFixUpTasks() {
 		return this.fixUpTasks;
 	}
