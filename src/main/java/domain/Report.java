@@ -4,14 +4,12 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-@Entity
 public class Report extends DomainEntity {
 
 	private Date				moment;
