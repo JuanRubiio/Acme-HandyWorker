@@ -4,12 +4,15 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class FixUpTask extends DomainEntity {
 
 	//---------Atributos------------
@@ -110,6 +113,7 @@ public class FixUpTask extends DomainEntity {
 		this.customer = customer;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Complaint> getComplaint() {
 		return this.complaint;
@@ -139,6 +143,7 @@ public class FixUpTask extends DomainEntity {
 		this.category = category;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Finder> getFinder() {
 		return this.finder;
@@ -148,6 +153,7 @@ public class FixUpTask extends DomainEntity {
 		this.finder = finder;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Apply> getApply() {
 		return this.apply;

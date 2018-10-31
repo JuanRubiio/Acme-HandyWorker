@@ -3,11 +3,14 @@ package domain;
 
 import java.util.Collection;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class HandyWorker extends Endorser {
 
 	//------Atributos---------
@@ -33,6 +36,7 @@ public class HandyWorker extends Endorser {
 	private Collection<Apply>		apply;
 
 
+	@NotEmpty
 	@Valid
 	public Collection<Tutorial> getTutorial() {
 		return this.tutorial;
@@ -52,6 +56,7 @@ public class HandyWorker extends Endorser {
 		this.curriculum = curriculum;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Finder> getFinder() {
 		return this.finder;
@@ -61,6 +66,7 @@ public class HandyWorker extends Endorser {
 		this.finder = finder;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Apply> getApply() {
 		return this.apply;

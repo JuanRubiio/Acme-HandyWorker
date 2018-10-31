@@ -4,16 +4,21 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class Apply extends DomainEntity {
 
 	//----------Atributos------------
 	private Date	moment;
+	private String	status;
 	private String	customerComment;
 	private Money	price;
 	private String	handyWorkerComments;
@@ -28,6 +33,16 @@ public class Apply extends DomainEntity {
 
 	public void setMoment(final Date moment) {
 		this.moment = moment;
+	}
+
+	@NotBlank
+	@Pattern(regexp = "PENDING|REJECTED|ACCEPTED")
+	public String getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(final String status) {
+		this.status = status;
 	}
 
 	@NotBlank
@@ -63,7 +78,6 @@ public class Apply extends DomainEntity {
 	private HandyWorker			handyWorker;
 	private Collection<Phase>	workplan;
 	private FixUpTask			fixUpTask;
-	private Collection<Status>	status;
 
 
 	@NotNull
@@ -76,6 +90,7 @@ public class Apply extends DomainEntity {
 		this.handyWorker = handyWorker;
 	}
 
+	@NotEmpty
 	@Valid
 	public Collection<Phase> getWorkPlan() {
 		return this.workplan;
@@ -93,16 +108,6 @@ public class Apply extends DomainEntity {
 
 	public void setFixUpTask(final FixUpTask fixUpTask) {
 		this.fixUpTask = fixUpTask;
-	}
-
-	@NotNull
-	@Valid
-	public Collection<Status> getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(final Collection<Status> status) {
-		this.status = status;
 	}
 
 }
