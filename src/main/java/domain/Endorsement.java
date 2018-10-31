@@ -3,12 +3,11 @@ package domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
 public class Endorsement extends DomainEntity {
 
 	private Date		moment;
@@ -17,6 +16,7 @@ public class Endorsement extends DomainEntity {
 	private Endorser	writeFor;
 
 
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -32,6 +32,7 @@ public class Endorsement extends DomainEntity {
 	public void setComment(final String comment) {
 		this.comment = comment;
 	}
+	@NotNull
 	@Valid
 	public Endorser getWriteTo() {
 		return this.writeTo;
@@ -40,6 +41,7 @@ public class Endorsement extends DomainEntity {
 	public void setWriteTo(final Endorser writeTo) {
 		this.writeTo = writeTo;
 	}
+	@NotNull
 	@Valid
 	public Endorser getWriteFor() {
 		return this.writeFor;

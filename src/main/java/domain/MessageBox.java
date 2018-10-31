@@ -3,15 +3,11 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class MessageBox extends DomainEntity {
 
 	// Atributos ---- 
@@ -30,7 +26,7 @@ public class MessageBox extends DomainEntity {
 	public void setName(final String name) {
 		this.name = name;
 	}
-
+	@NotNull
 	public Boolean getSystem() {
 		return this.system;
 	}
@@ -46,6 +42,7 @@ public class MessageBox extends DomainEntity {
 	private Actor				actor;
 
 
+	@NotNull
 	@Valid
 	public Collection<Message> getMessages() {
 		return this.messages;
@@ -55,6 +52,7 @@ public class MessageBox extends DomainEntity {
 		this.messages = messages;
 	}
 
+	@NotNull
 	@Valid
 	public Actor getActor() {
 		return this.actor;

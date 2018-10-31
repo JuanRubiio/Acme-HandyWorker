@@ -4,41 +4,33 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Message extends DomainEntity {
 
 	// Atributos ---- 
-	private Date	date;
+	private Date				date;
 
-	private Actor	sender;
+	private Actor				sender;
 
-	private Actor	recipient;
+	private Actor				recipient;
 
-	private String	subject;
+	private String				subject;
 
-	private String	body;
+	private String				body;
 
-	private String	priority;
+	private String				priority;
 
-	private Boolean	spam	= false;
+	private Boolean				spam	= false;
+
+	private Collection<String>	tags;
 
 
 	@NotNull
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-	@Temporal(TemporalType.TIMESTAMP)
 	public Date getDate() {
 		return this.date;
 	}
@@ -46,7 +38,7 @@ public class Message extends DomainEntity {
 	public void setDate(final Date date) {
 		this.date = date;
 	}
-
+	@NotNull
 	@Valid
 	public Actor getSender() {
 		return this.sender;
@@ -55,7 +47,7 @@ public class Message extends DomainEntity {
 	public void setSender(final Actor sender) {
 		this.sender = sender;
 	}
-
+	@NotNull
 	@Valid
 	public Actor getRecipient() {
 		return this.recipient;
@@ -64,7 +56,7 @@ public class Message extends DomainEntity {
 	public void setRecipient(final Actor recipient) {
 		this.recipient = recipient;
 	}
-
+	@NotNull
 	public Boolean getSpam() {
 		return this.spam;
 	}
@@ -106,9 +98,9 @@ public class Message extends DomainEntity {
 
 	private Actor					actor;
 	private Collection<MessageBox>	messageBoxes;
-	private Collection<Tag>			tags;
 
 
+	@NotNull
 	@Valid
 	public Actor getActor() {
 		return this.actor;
@@ -117,7 +109,7 @@ public class Message extends DomainEntity {
 	public void setActor(final Actor actor) {
 		this.actor = actor;
 	}
-
+	@NotNull
 	@Valid
 	public Collection<MessageBox> getMessageBoxes() {
 		return this.messageBoxes;
@@ -127,12 +119,12 @@ public class Message extends DomainEntity {
 		this.messageBoxes = messageBoxes;
 	}
 
-	@Valid
-	public Collection<Tag> getTags() {
+	@NotNull
+	public Collection<String> getTags() {
 		return this.tags;
 	}
 
-	public void setTags(final Collection<Tag> tags) {
+	public void setTags(final Collection<String> tags) {
 		this.tags = tags;
 	}
 

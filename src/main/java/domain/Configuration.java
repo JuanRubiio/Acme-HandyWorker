@@ -1,32 +1,33 @@
 
 package domain;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
+import java.util.Collection;
+
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public class Configuration extends DomainEntity {
 
 	// Atributos ---- 
-	private String	banner;
+	private String				banner;
 
-	private String	welcomMessage;
+	private String				welcomMessage;
 
-	private String	welcomMessageEs;
+	private String				welcomMessageEs;
 
-	private Double	vat;
+	private Double				vat;
 
-	private String	countryCode;
+	private String				countryCode;
 
-	private Integer	finderDuration;
+	private Integer				finderDuration;
+
+	private Collection<String>	cards;
 
 
+	@NotNull
 	@Min(0)
 	public Integer getFinderDuration() {
 		return this.finderDuration;
@@ -64,6 +65,7 @@ public class Configuration extends DomainEntity {
 		this.welcomMessageEs = welcomMessageEs;
 	}
 
+	@NotNull
 	@Min(1)
 	public Double getVat() {
 		return this.vat;
@@ -80,6 +82,15 @@ public class Configuration extends DomainEntity {
 
 	public void setCountryCode(final String countryCode) {
 		this.countryCode = countryCode;
+	}
+
+	@NotNull
+	public Collection<String> getCards() {
+		return this.cards;
+	}
+
+	public void setCards(final Collection<String> cards) {
+		this.cards = cards;
 	}
 
 }

@@ -1,13 +1,11 @@
 
 package domain;
 
-import javax.persistence.Embeddable;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-@Embeddable
 public class Money {
 
 	private Double	amount;

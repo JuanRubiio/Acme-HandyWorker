@@ -12,10 +12,8 @@ package domain;
 
 import java.util.Collection;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -24,8 +22,6 @@ import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
 
-@Entity
-@Access(AccessType.PROPERTY)
 public abstract class Actor extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
@@ -112,6 +108,7 @@ public abstract class Actor extends DomainEntity {
 	private UserAccount					userAccount;
 
 
+	@NotNull
 	@Valid
 	public UserAccount getUserAccount() {
 		return this.userAccount;
@@ -120,7 +117,7 @@ public abstract class Actor extends DomainEntity {
 	public void setUserAccount(final UserAccount userAccount) {
 		this.userAccount = userAccount;
 	}
-
+	@NotNull
 	@Valid
 	public Collection<MessageBox> getMessageBoxes() {
 		return this.messageBoxes;
@@ -129,7 +126,7 @@ public abstract class Actor extends DomainEntity {
 	public void setMessageBoxes(final Collection<MessageBox> messageBoxes) {
 		this.messageBoxes = messageBoxes;
 	}
-
+	@NotNull
 	@Valid
 	public Collection<Message> getMessages() {
 		return this.messages;
@@ -138,7 +135,7 @@ public abstract class Actor extends DomainEntity {
 	public void setMessages(final Collection<Message> messages) {
 		this.messages = messages;
 	}
-
+	@NotNull
 	@Valid
 	public Collection<SocialProfile> getSocialProfiles() {
 		return this.socialProfiles;
