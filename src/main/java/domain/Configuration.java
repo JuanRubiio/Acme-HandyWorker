@@ -7,6 +7,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
 public class Configuration extends DomainEntity {
@@ -28,7 +29,7 @@ public class Configuration extends DomainEntity {
 
 
 	@NotNull
-	@Min(0)
+	@Range(min = 60, max = 1440)
 	public Integer getFinderDuration() {
 		return this.finderDuration;
 	}
