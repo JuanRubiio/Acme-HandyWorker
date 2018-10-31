@@ -58,6 +58,7 @@ public class Warranty extends DomainEntity {
 	private Collection<FixUpTask>	task;
 
 
+	@NotNull
 	@Valid
 	public Collection<FixUpTask> getTask() {
 		return this.task;

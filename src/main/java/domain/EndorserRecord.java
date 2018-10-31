@@ -1,33 +1,33 @@
+
 package domain;
+
+import java.util.Collection;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 public class EndorserRecord extends DomainEntity {
 
 	// Atributos ---- 
-	private String	name;
+	private String				name;
 
-	private String	email;
+	private String				email;
 
-	private String	phoneNumber;
-	
-	private String attachment;
-	
-	private String comments;
+	private String				phoneNumber;
+
+	private String				attachment;
+
+	private Collection<String>	comments;
 
 
 	@NotBlank
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(final String name) {
@@ -36,7 +36,7 @@ public class EndorserRecord extends DomainEntity {
 
 	@Email
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(final String email) {
@@ -45,41 +45,45 @@ public class EndorserRecord extends DomainEntity {
 
 	@NotBlank
 	public String getPhoneNumber() {
-		return phoneNumber;
+		return this.phoneNumber;
 	}
 
 	public void setPhoneNumber(final String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	
+
 	@URL
-	public String getAttachment(){
-		return attachment;
+	public String getAttachment() {
+		return this.attachment;
 	}
-	
-	public void setAttachment(final String attachment){
+
+	public void setAttachment(final String attachment) {
 		this.attachment = attachment;
 	}
-	
-	public String getComments() {
-		return comments;
+
+	@NotEmpty
+	public Collection<String> getComments() {
+		return this.comments;
 	}
 
-	public void setComments(final String comments) {
+	public void setComments(final Collection<String> comments) {
 		this.comments = comments;
 	}
-// Relationships ----
 
-	private Curriculum curriculum;
+
+	// Relationships ----
+
+	private Curriculum	curriculum;
+
 
 	@Valid
 	@NotNull
-	public Curriculum getCurriculum(){
-		return curriculum;
+	public Curriculum getCurriculum() {
+		return this.curriculum;
 	}
-	
-	public void setCurriculum(final Curriculum aux){
-		curriculum=aux;
+
+	public void setCurriculum(final Curriculum aux) {
+		this.curriculum = aux;
 	}
 
 }

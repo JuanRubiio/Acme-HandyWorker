@@ -20,7 +20,7 @@ public class FixUpTask extends DomainEntity {
 	private Date	moment;
 	private String	description;
 	private String	address;
-	private Money	maxPrice;
+	private Double	maxPrice;
 	private Date	maxDate;
 	private Date	minDate;
 
@@ -66,11 +66,11 @@ public class FixUpTask extends DomainEntity {
 
 	@NotNull
 	@Valid
-	public Money getMaxPrice() {
+	public Double getMaxPrice() {
 		return this.maxPrice;
 	}
 
-	public void setMaxPrice(final Money maxPrice) {
+	public void setMaxPrice(final Double maxPrice) {
 		this.maxPrice = maxPrice;
 	}
 
@@ -113,7 +113,7 @@ public class FixUpTask extends DomainEntity {
 		this.customer = customer;
 	}
 
-	@NotEmpty
+	@NotNull
 	@Valid
 	public Collection<Complaint> getComplaint() {
 		return this.complaint;
@@ -153,7 +153,7 @@ public class FixUpTask extends DomainEntity {
 		this.finder = finder;
 	}
 
-	@NotEmpty
+	@NotNull
 	@Valid
 	public Collection<Apply> getApply() {
 		return this.apply;

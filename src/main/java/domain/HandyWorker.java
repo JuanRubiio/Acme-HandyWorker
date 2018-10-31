@@ -8,7 +8,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class HandyWorker extends Endorser {
@@ -36,7 +35,7 @@ public class HandyWorker extends Endorser {
 	private Collection<Apply>		apply;
 
 
-	@NotEmpty
+	@NotNull
 	@Valid
 	public Collection<Tutorial> getTutorial() {
 		return this.tutorial;
@@ -56,7 +55,7 @@ public class HandyWorker extends Endorser {
 		this.curriculum = curriculum;
 	}
 
-	@NotEmpty
+	@NotNull
 	@Valid
 	public Collection<Finder> getFinder() {
 		return this.finder;
@@ -66,7 +65,7 @@ public class HandyWorker extends Endorser {
 		this.finder = finder;
 	}
 
-	@NotEmpty
+	@NotNull
 	@Valid
 	public Collection<Apply> getApply() {
 		return this.apply;

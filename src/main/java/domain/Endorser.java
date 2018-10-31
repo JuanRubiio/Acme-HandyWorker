@@ -1,19 +1,23 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class Endorser extends Actor {
 
-	private Endorsement	endorsement;
+	private Collection<Endorsement>	endorsement;
 
 
+	@NotNull
 	@Valid
-	public Endorsement getEndorsement() {
+	public Collection<Endorsement> getEndorsement() {
 		return this.endorsement;
 	}
 
-	public void setEndorsement(final Endorsement endorsement) {
+	public void setEndorsement(final Collection<Endorsement> endorsement) {
 		this.endorsement = endorsement;
 	}
 

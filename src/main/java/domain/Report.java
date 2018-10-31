@@ -8,13 +8,13 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Report extends DomainEntity {
 
 	private Date				moment;
 	private String				description;
-	private String				attachements;
+	private Collection<String>	attachements;
 	private Boolean				draft;
 
 	private Collection<Note>	collectionNotes;
@@ -31,6 +31,7 @@ public class Report extends DomainEntity {
 		this.moment = moment;
 	}
 
+	@NotNull
 	@Valid
 	public Collection<Note> getCollectionNotes() {
 		return this.collectionNotes;
@@ -69,12 +70,12 @@ public class Report extends DomainEntity {
 		this.description = description;
 	}
 
-	@URL
-	public String getAttachements() {
+	@NotEmpty
+	public Collection<String> getAttachements() {
 		return this.attachements;
 	}
 
-	public void setAttachements(final String attachements) {
+	public void setAttachements(final Collection<String> attachements) {
 		this.attachements = attachements;
 	}
 

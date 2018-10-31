@@ -6,9 +6,12 @@ import java.util.Date;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Note extends DomainEntity {
 
 	private Date	moment;
+	private String	mandatoryComment;
 	private String	handyworkerComments;
 	private String	customerComments;
 	private String	refereeComments;
@@ -23,6 +26,15 @@ public class Note extends DomainEntity {
 
 	public void setMoment(final Date moment) {
 		this.moment = moment;
+	}
+
+	@NotBlank
+	public String getMandatoryComment() {
+		return this.mandatoryComment;
+	}
+
+	public void setMandatoryComment(final String mandatoryComment) {
+		this.mandatoryComment = mandatoryComment;
 	}
 
 	public String getHandyworkerComments() {

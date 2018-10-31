@@ -4,7 +4,6 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -13,14 +12,13 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
-@Entity
 public class Apply extends DomainEntity {
 
 	//----------Atributos------------
 	private Date	moment;
 	private String	status;
 	private String	customerComment;
-	private Money	price;
+	private Double	price;
 	private String	handyWorkerComments;
 
 
@@ -54,13 +52,12 @@ public class Apply extends DomainEntity {
 		this.customerComment = customerComment;
 	}
 
-	@Valid
 	@NotNull
-	public Money getPrice() {
+	public Double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(final Money price) {
+	public void setPrice(final Double price) {
 		this.price = price;
 	}
 

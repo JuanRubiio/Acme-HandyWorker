@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Message extends DomainEntity {
 
@@ -119,7 +120,7 @@ public class Message extends DomainEntity {
 		this.messageBoxes = messageBoxes;
 	}
 
-	@NotNull
+	@NotEmpty
 	public Collection<String> getTags() {
 		return this.tags;
 	}

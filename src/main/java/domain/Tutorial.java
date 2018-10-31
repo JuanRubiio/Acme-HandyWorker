@@ -12,16 +12,16 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class Tutorial extends DomainEntity {
 
-	private String				title;
-	private Date				momentUpdate;
-	private String				summary;
-	private Collection<String>	pictures;
-	private Date				momentCreate;
+	private String					title;
+	private Date					momentUpdate;
+	private String					summary;
+	private Collection<String>		pictures;
+	private Date					momentCreate;
 
 	//external attributes
-	private Collection<Section>	section;
-	private Sponsorship			sponsorship;
-	private HandyWorker			handyWorker;
+	private Collection<Section>		section;
+	private Collection<Sponsorship>	sponsorships;
+	private HandyWorker				handyWorker;
 
 
 	@NotBlank
@@ -56,6 +56,7 @@ public class Tutorial extends DomainEntity {
 	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
+
 	@NotNull
 	public Date getMomentCreate() {
 		return this.momentCreate;
@@ -75,13 +76,14 @@ public class Tutorial extends DomainEntity {
 		this.section = section;
 	}
 
+	@NotNull
 	@Valid
-	public Sponsorship getSponsorship() {
-		return this.sponsorship;
+	public Collection<Sponsorship> getSponsorship() {
+		return this.sponsorships;
 	}
 
-	public void setSponsorship(final Sponsorship sponsorship) {
-		this.sponsorship = sponsorship;
+	public void setSponsorship(final Collection<Sponsorship> sponsorship) {
+		this.sponsorships = sponsorship;
 	}
 
 	@Valid
