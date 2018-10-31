@@ -3,11 +3,9 @@ package domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@Entity
 public class Note extends DomainEntity {
 
 	private Date	moment;
