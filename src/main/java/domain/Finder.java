@@ -4,9 +4,11 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+@Entity
 public class Finder extends DomainEntity {
 
 	private String					key;
@@ -23,7 +25,6 @@ public class Finder extends DomainEntity {
 
 
 	@Valid
-	@NotNull
 	public Collection<FixUpTask> getFixUpTasks() {
 		return this.fixUpTasks;
 	}
