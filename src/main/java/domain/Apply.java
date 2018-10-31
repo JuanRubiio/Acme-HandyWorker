@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Date;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -53,6 +54,7 @@ public class Apply extends DomainEntity {
 	}
 
 	@NotNull
+	@Digits(integer = 4, fraction = 2)
 	public Double getPrice() {
 		return this.price;
 	}

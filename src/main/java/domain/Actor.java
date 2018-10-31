@@ -81,7 +81,7 @@ public abstract class Actor extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "^([+-]\\d+\\s+)?(\\([0-9]+\\)\\s+)?([\\d\\w\\s-]+)$")
+	@Pattern(regexp = "(\\+\\d{1,3})?(\\(\\d{1,3}\\))?(\\w{4,})?")
 	public String getPhone() {
 		return this.phone;
 	}

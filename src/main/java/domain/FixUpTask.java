@@ -6,6 +6,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -63,9 +64,8 @@ public class FixUpTask extends DomainEntity {
 	public void setAddress(final String address) {
 		this.address = address;
 	}
-
+	@Digits(integer = 4, fraction = 2)
 	@NotNull
-	@Valid
 	public Double getMaxPrice() {
 		return this.maxPrice;
 	}

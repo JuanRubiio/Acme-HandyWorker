@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -44,6 +45,7 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@NotBlank
+	@Pattern(regexp = "(\\+\\d{1,3})?(\\(\\d{1,3}\\))?(\\w{4,})?")
 	public String getPhoneNumber() {
 		return this.phoneNumber;
 	}
